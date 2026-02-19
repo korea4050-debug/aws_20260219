@@ -1,0 +1,82 @@
+docker compose up -d --build
+
+docker compose down --rmi all -v
+
+
+docker ps
+
+
+docker compose logs frontend
+docker compose logs backend
+docker compose logs nginx
+
+
+
+# 1.도커 파일 실행
+docker build -t my-jenkins .
+
+2. Run 리눅스
+docker run -d \
+  --name jenkins \
+  -u root \
+  -p 8080:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  my-jenkins
+
+
+
+
+  2. window 줄바꿈
+  docker run -d ^
+    --name jenkins ^
+    -u root ^
+    -p 8080:8080 ^
+    -p 50000:50000 ^
+    -v jenkins_home:/var/jenkins_home ^
+    -v /var/run/docker.sock:/var/run/docker.sock ^
+    my-jenkins
+
+2. window 1줄
+docker run -d --name jenkins -u root -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v //var/run/docker.sock:/var/run/docker.sock my-jenkins
+
+
+3. 비밀번호 복사
+docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+4. 비밀번호 생성됨
+18fdc8ccf08d447fb67a87cccac06f15
+
+
+4. aws의 비밀번호
+a5b9380947ba4048a64ccf86771f5b73
+
+5. localhost
+http://localhost:8080/
+
+5. 아마존 젠킨스
+http://13.125.18.221:8080/
+
+6. git 생성
+https://github.com/korea4050-debug/emp_jenkins.git
+
+korea/rose100
+
+7. Git hub에서 암호생성
+
+8. Credentials
+
+
+9. aws Ip
+
+13.125.18.221
+
+도커설정 doc 수정
+17번 부터
+https://docs.google.com/presentation/d/1BxzuPk0qqUxmB1s5F1EHnGHAPHY7CI6NXqnfy9qbnUA/edit?slide=id.p#slide=id.p
+
+
+docker exec -it jenkins bash
+docker version
+docker compose version
